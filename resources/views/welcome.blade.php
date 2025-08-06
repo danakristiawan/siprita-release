@@ -18,10 +18,18 @@
                     <a
                         class="btn btn-sm btn-primary rounded-pill px-2"
                         role="button"
-                        href="{{ route('login') }}"
+                        href="{{ route('redirect') }}"
                     >
                         <i class="ti ti-external-link me-1"></i>
                         Masuk menggunakan SSO Kemenkeu
+                    </a>
+                    <a
+                        class="btn btn-sm btn-primary rounded-pill px-2"
+                        role="button"
+                        href="{{ route('login') }}"
+                    >
+                        <i class="ti ti-external-link me-1"></i>
+                        Masuk Manual
                     </a>
                 </div>
             </div>

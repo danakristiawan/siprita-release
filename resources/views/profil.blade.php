@@ -15,52 +15,55 @@
             <div class="d-flex mb-1">
                 <div class="flex-shrink-0">
                     <img
-                        src="../assets/images/avatar-2.jpg"
+                        src="{{ $userInfo->gravatar }}"
                         alt="user-image"
                         class="user-avtar wid-75"
                     />
                 </div>
                 <div class="flex-grow-1 ms-3">
                     <h6 class="mb-1 mt-2">
-                        {{ auth()->user()->name }}
+                        {{ $user->name }}
                     </h6>
-                    <div class="mb-1">198407022003121004</div>
-                    <span>{{ auth()->user()->email }}</span>
+                    <div class="mb-1">{{ $userInfo->nip }}</div>
+                    <span>{{ $user->email }}</span>
                 </div>
             </div>
 
             <table class="table table-sm table-hover mt-5">
                 <tr>
                     <td>NPWP</td>
-                    <td>143622686333000</td>
+                    <td>{{ $userInfo->g2c_Npwp }}</td>
                 </tr>
                 <tr>
                     <td>NIK</td>
-                    <td>3276110207840003</td>
+                    <td>{{ $userInfo->g2c_Nik }}</td>
                 </tr>
                 <tr>
                     <td>No. Telp</td>
-                    <td>081295945300</td>
+                    <td>{{ $userInfo->phone_number }}</td>
                 </tr>
                 <tr>
                     <td>Jabatan</td>
-                    <td>Pranata Komputer Ahli Pertama (Kel. I)</td>
+                    <td>{{ $userInfo->jabatan }}</td>
                 </tr>
                 <tr>
                     <td>Jenis Jabatan</td>
-                    <td>Fungsional Tertentu</td>
+                    <td>{{ $userInfo->jenis_jabatan }}</td>
                 </tr>
                 <tr>
                     <td>Unit</td>
                     <td>
-                        35083503 - Subdirektorat Perancangan dan Integrasi
-                        Sistem Aplikasi, Direktorat Transformasi dan Sistem
-                        Informasi, Direktorat Jenderal Kekayaan Negara
+                        {{ $userInfo->kode_organisasi }} -
+                        {{ $userInfo->organisasi }}
                     </td>
                 </tr>
                 <tr>
                     <td>Kode Satker</td>
-                    <td>411792</td>
+                    <td>{{ $userInfo->kode_satker }}</td>
+                </tr>
+                <tr>
+                    <td>Id Token</td>
+                    <td>{{ $id_token }}</td>
                 </tr>
                 <tr>
                     <td>Role</td>
@@ -70,7 +73,7 @@
                         >
                             @foreach ($user->roles as $role)
                             <li class="list-group-item py-1 px-1">
-                                {{ $role->app  }}
+                                {{ $role->name  }}
                             </li>
                             @endforeach
                         </ul>

@@ -9,8 +9,12 @@ Route::get('/', function () {
 Route::controller(App\Http\Controllers\LoginController::class)->group(function () {
     Route::get('login', 'login')->name('login')->middleware('guest');
     Route::post('authenticate', 'authenticate')->name('authenticate');
-    Route::post('logout', 'logout')->name('logout')->middleware('auth');
+    // Route::post('logout', 'logout')->name('logout')->middleware('auth');
 });
+
+Route::get('/redirect', [App\Http\Controllers\KemenkeuIDController::class, 'redirectToProvider'])->name('redirect');
+Route::get('/connect', [App\Http\Controllers\KemenkeuIDController::class, 'handleProviderCallback'])->name('connect');
+Route::post('/logout', [App\Http\Controllers\KemenkeuIDController::class, 'logout'])->name('logout')->middleware('auth');
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware('auth');
 Route::get('/profil', [App\Http\Controllers\ProfilController::class, 'index'])->name('profil')->middleware('auth');

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\DataTables;
+namespace App\Datatables;
 
 use App\Models\User;
 use Yajra\DataTables\Html\Button;

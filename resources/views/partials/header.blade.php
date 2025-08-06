@@ -27,10 +27,13 @@
                         data-bs-auto-close="outside"
                         aria-expanded="false"
                     >
+                        @php $userInfo = Session::get('userInfo'); @endphp
+
                         <img
-                            src="../assets/images/avatar-2.jpg"
+                            src="{{ $userInfo->gravatar }}"
+                            style="height: 25px"
                             alt="user-image"
-                            class="user-avtar"
+                            class="user-avtar wid-35"
                         />
 
                         <span>{{ auth()->user()->name }}</span>
@@ -42,7 +45,8 @@
                             <div class="d-flex mb-1">
                                 <div class="flex-shrink-0">
                                     <img
-                                        src="../assets/images/avatar-2.jpg"
+                                        src="{{ $userInfo->gravatar }}"
+                                        style="height: 45px"
                                         alt="user-image"
                                         class="user-avtar wid-35"
                                     />

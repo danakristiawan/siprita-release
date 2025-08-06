@@ -35,4 +35,12 @@ return [
         ],
     ],
 
+    'kemenkeuid' => [
+        'client_id' => env('KEMENKEUID_CLIENT_ID'),
+        'client_secret' => env('KEMENKEUID_CLIENT_SECRET'),
+        'redirect' => env('KEMENKEUID_REDIRECT_URI'),
+        'logout_redirect' => env('KEMENKEUID_LOGOUT_REDIRECT_URI'),
+        'provider_url' => env('KEMENKEUID_PROVIDER_URL'),
+    ],
+
 ];
