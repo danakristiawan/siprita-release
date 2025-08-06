@@ -22,10 +22,10 @@
                 </div>
                 <div class="flex-grow-1 ms-3">
                     <h6 class="mb-1 mt-2">
-                        {{ $user->name }}
+                        {{ $userInfo->name }}
                     </h6>
                     <div class="mb-1">{{ $userInfo->nip }}</div>
-                    <span>{{ $user->email }}</span>
+                    <span>{{$userInfo->email }}</span>
                 </div>
             </div>
 
@@ -60,10 +60,6 @@
                 <tr>
                     <td>Kode Satker</td>
                     <td>{{ $userInfo->kode_satker }}</td>
-                </tr>
-                <tr>
-                    <td>Id Token</td>
-                    <td>{{ $id_token }}</td>
                 </tr>
                 <tr>
                     <td>Role</td>

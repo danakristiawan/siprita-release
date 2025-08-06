@@ -17,8 +17,7 @@ class ProfilController extends Controller
     {
         $user = auth()->user();
         $userInfo = Session::get('userInfo');
-        $id_token = Session::get('id_token');
-        return view('profil', compact('user', 'userInfo', 'id_token'));
+        return view('profil', compact('user', 'userInfo'));
     }
 
 }

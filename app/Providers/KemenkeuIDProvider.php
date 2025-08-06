@@ -11,7 +11,6 @@ use Laravel\Socialite\Two\ProviderInterface;
 
 class KemenkeuIDProvider extends AbstractProvider implements ProviderInterface
 {
-    // protected $scopes = ['profile openid gateway jabatan.hris'];
     protected $scopes = ['openid profile profil.hris jabatan.hris organisasi.hris'];
 
     /**
