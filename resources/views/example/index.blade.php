@@ -10,6 +10,12 @@
     </div>
 </div>
 
+@session('success')
+<div class="alert alert-success" role="alert">
+    {{ $value }}
+</div>
+@endsession
+
 <div class="col-md-12">
     <div class="card">
         <div class="card-header py-3">
@@ -31,7 +37,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @forelse ($examples as $example)
+                        @foreach ($examples as $example)
                         <tr>
                             <td>{{ $loop->iteration }}</td>
                             <td>{{ $example->name }}</td>
@@ -67,16 +73,7 @@
                                 </div>
                             </td>
                         </tr>
-                        @empty
-                        <tr>
-                            <td colspan="3">
-                                <span class="text-danger">
-                                    <strong>No Data Found!</strong>
-                                </span>
-                            </td>
-                        </tr>
-
-                        @endforelse
+                        @endforeach
                     </tbody>
                 </table>
             </div>
@@ -86,6 +83,7 @@
 
 @endsection @push('js')
 <script type="module">
+    $("#example").dataTable();
     $(".js-example-basic-single").select2();
 </script>
 @endpush
