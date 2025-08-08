@@ -52,6 +52,12 @@
                 <span class="pc-mtext">Example</span>
             </a>
         </li>
+        <li class="pc-item">
+            <a href="{{ route('preferensi.index') }}" class="pc-link">
+                <span class="pc-micon"><i class="ti ti-check"></i></span>
+                <span class="pc-mtext">Preferensi</span>
+            </a>
+        </li>
         @endauth
     </ul>
 </div>

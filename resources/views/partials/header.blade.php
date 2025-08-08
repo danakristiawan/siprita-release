@@ -30,7 +30,7 @@
                         @php $userInfo = Session::get('userInfo'); @endphp
 
                         <img
-                            src="{{ $userInfo->gravatar }}"
+                            src=""
                             style="height: 25px"
                             alt="user-image"
                             class="user-avtar wid-35"
@@ -45,7 +45,7 @@
                             <div class="d-flex mb-1">
                                 <div class="flex-shrink-0">
                                     <img
-                                        src="{{ $userInfo->gravatar }}"
+                                        src=""
                                         style="height: 45px"
                                         alt="user-image"
                                         class="user-avtar wid-35"

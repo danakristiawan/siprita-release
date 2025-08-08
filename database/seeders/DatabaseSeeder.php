@@ -7,6 +7,8 @@ use App\Models\User;
 use App\Models\Example;
 use Illuminate\Support\Str;
 use Illuminate\Database\Seeder;
+use Database\Seeders\SatkerSeeder;
+use Database\Seeders\KategoriSeeder;
 use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
@@ -16,18 +18,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // User::factory(10)->create();
-
-        // User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        //     'email_verified_at' => now(),
-        //     'password' => Hash::make('123'),
-        //     'remember_token' => Str::random(10),
-        // ]);
-
-        Example::create([
-            'name' => 'Test',
+        $this->call([
+            // SatkerSeeder::class,
+            KategoriSeeder::class,
         ]);
     }
 }
